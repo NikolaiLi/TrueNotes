@@ -1,30 +1,9 @@
 .header{
   margin: 10px;
 }
-
-<<<<<<< HEAD
-  }
-  
-  .numberBox{
-       
-    background-color: #ecff58;
-    color:black;
-    text-align: center;
-  }
-
-  .button-box{
-    width:100%;
-    text-align: left;
-  }
-
-  .button{
-    display: inline-block;   
-  }
-=======
 .navbar{
-  margin: 10px;
-}
->>>>>>> dd89cb82af3d14b5439a0a3cd5df3f72f0d24833
+   margin: 10px;
+  }
 
 .opret{
   margin: 10px;

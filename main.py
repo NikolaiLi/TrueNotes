@@ -8,13 +8,19 @@ jinja = SanicJinja2(app)
 
 globals = {}
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 @app.get("/")
 @jinja.template("index.html")
 async def index(request):
     return None
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 @app.post("/add")
 async def add_number(request):
      return redirect(f"/")

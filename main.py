@@ -17,5 +17,20 @@ async def index(request):
 async def add_number(request):
      return redirect(f"/")
 
+globals = {}
+
+
+@app.get("/")
+@jinja.template("index.html")
+async def index(request):
+
+    return None
+
+
+@app.post("/add")
+async def add_number(request):
+    
+     return redirect(f"/")
+
 if __name__ == "__main__":
     app.run(host="localhost", port=8080)

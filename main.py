@@ -8,17 +8,6 @@ jinja = SanicJinja2(app)
 
 globals = {}
 
-@app.get("/")
-@jinja.template("index.html")
-async def index(request):
-    return None
-
-@app.post("/add")
-async def add_number(request):
-     return redirect(f"/")
-
-globals = {}
-
 
 @app.get("/")
 @jinja.template("index.html")

@@ -1,0 +1,23 @@
+/* Global Styling */
+* {
+    padding: 0;
+    margin: 0;
+
+  }
+  
+  .numberBox{
+       
+    background-color: #ecff58;
+    color:black;
+    text-align: center;
+  }
+
+  .button-box{
+    width:100%;
+    text-align: center;
+  }
+
+  .button{
+    display: inline-block;   
+  }
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'header.html' %}
+
+    <body>
+        <div class = "button-box">
+            <form action="/add" method = "POST" >
+                <button type="submit" class = "button">Click me to add</button>
+            </form>
+        </div>
+
+        <div class = "number-box">
+            <h1> {{number}} </h1>
+        </div>
+        
+    </body>
+
+</html>

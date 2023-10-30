@@ -1,8 +1,8 @@
-/* Global Styling */
-* {
-    padding: 0;
-    margin: 0;
+.header{
+  margin: 10px;
+}
 
+<<<<<<< HEAD
   }
   
   .numberBox{
@@ -14,10 +14,18 @@
 
   .button-box{
     width:100%;
-    text-align: center;
+    text-align: left;
   }
 
   .button{
     display: inline-block;   
   }
+=======
+.navbar{
+  margin: 10px;
+}
+>>>>>>> dd89cb82af3d14b5439a0a3cd5df3f72f0d24833
 
+.opret{
+  margin: 10px;
+}

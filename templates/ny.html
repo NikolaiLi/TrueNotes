@@ -1,0 +1,17 @@
+<html lang="en">
+
+{% include 'header.html' %}
+
+<body>
+    <div class = "contents">
+        <form method = "POST" action = '/noter' enctype="multipart/form-data">
+            <div class = "blog postblog-page">
+                <input type = "text" class = "blog-name" name = "blogname" placeholder="Hvad er noten til?" required = "true">
+                <textarea class = "blog-text" name = "blogtext" placeholder="Skriv din note her:" required = "true"></textarea>
+            </div>
+            <input class="button" type="submit" value="Opret">
+        </form>
+    </div>       
+</body>
+
+</html>

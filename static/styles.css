@@ -1,6 +1,8 @@
-.header{
-  margin: 10px;
+.logo{
+  display: flex;
+  align-items: center;
 }
+
 .navbar{
    margin: 10px;
   }

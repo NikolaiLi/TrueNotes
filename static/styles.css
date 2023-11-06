@@ -1,8 +1,12 @@
+.header {
+}
+
 .logo{
   display: flex;
   align-items: center;
 }
 
 .navbar{
-   margin: 10px;
-  }
+  align-items: center;
+  margin-left: 10px;
+}

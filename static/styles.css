@@ -1,4 +1,6 @@
 .header {
+  display: flex;
+  margin: 10px;
 }
 
 .logo{
@@ -9,4 +11,9 @@
 .navbar{
   align-items: center;
   margin-left: 10px;
+  display: flex;
+}
+
+.navbar * {
+  margin-left: 20px;
 }

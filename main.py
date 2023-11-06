@@ -32,18 +32,5 @@ async def opret(request):
 async def logind(request):
     return globals
 
-@app.post("/ny")
-async def ny(request):
-    title = request.form.get('Navn')
-    text = request.form.get('Tekst')
-    id = str(uuid.uuid4())
-
-    newpost = Post(title,text)
-
-    globals["posts"][id] = newpost
-    print(title + text)
-    
-    return redirect("/noter")
-
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug = True)

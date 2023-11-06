@@ -8,7 +8,9 @@ app = Sanic("Hej")
 app.static("/static", "./static")
 jinja = SanicJinja2(app)
 
-globals = {"menu": {"Startside":"/", "Opret": "/opret", "Noter": "/noter"}}
+globals = {"menu": {"Startside":"/", "Opret": "/opret", "Noter": "/noter", "Log Ind": "/logind"},
+           "posts": {}
+           }
 
 @app.get("/")
 @jinja.template("index.html")
@@ -23,6 +25,11 @@ async def noter(request):
 @app.get("/opret")
 @jinja.template("opret.html")
 async def opret(request):
+    return globals
+
+@app.get("/logind")
+@jinja.template("logind.html")
+async def logind(request):
     return globals
 
 @app.post("/ny")

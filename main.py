@@ -11,23 +11,26 @@ jinja = SanicJinja2(app)
 notes = []
 
 globals = {"menu": {"Startside":"/", "Opret": "/opret", "Noter": "/noter", "Log Ind": "/logind"},
-           "posts": {}
+           "posts": {},
+           "notes": notes
            }
+
+
 
 @app.get("/", name = "index")
 @jinja.template("index.html")
 async def index(request):
-    return {"menu": {"Startside": "/", "Opret": "/opret", "Noter": "/noter", "Log Ind": "/logind"}, "notes": notes}
+    return globals
 
 @app.get("/noter", name = "noter_page")
 @jinja.template("noter.html")
 async def noter(request):
-    return {"menu": {"Startside": "/", "Opret": "/opret", "Noter": "/noter", "Log Ind": "/logind"}, "notes": notes}
+    return globals
 
 @app.get("/opret", name = "opret")
 @jinja.template("opret.html")
 async def opret(request):
-    return {"menu": {"Startside": "/", "Opret": "/opret", "Noter": "/noter", "Log Ind": "/logind"}}
+    return globals
 
 @app.post("/Note")
 async def Note(request):
@@ -44,7 +47,7 @@ async def Note(request):
 @app.get("/logind")
 @jinja.template("logind.html")
 async def logind(request):
-    return {"menu": {"Startside": "/", "Opret": "/opret", "Noter": "/noter", "Log Ind": "/logind"}}
+    return globals
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug = True)

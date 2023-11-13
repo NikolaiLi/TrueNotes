@@ -17,7 +17,6 @@ globals = {"menu": {"Startside":"/", "Opret": "/opret", "Noter": "/noter"},
            }
 
 
-
 @app.get("/", name = "index")
 @jinja.template("index.html")
 async def index(request):
@@ -33,6 +32,11 @@ async def noter(request):
 async def opret(request):
     return globals
 
+@app.get("/logind")
+@jinja.template("logind.html")
+async def logind(request):
+    return globals
+
 @app.post("/Note")
 async def Note(request):
     title = request.form.get('Emne')
@@ -40,15 +44,8 @@ async def Note(request):
     id = str(uuid.uuid4())
 
     note = {"id": id, "title": title, "text": text}
-
     notes.append(note)
-
     return redirect("/noter")
-
-@app.get("/logind")
-@jinja.template("logind.html")
-async def logind(request):
-    return globals
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug = True)

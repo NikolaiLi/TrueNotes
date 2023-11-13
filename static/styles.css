@@ -34,6 +34,14 @@
   margin-left: 1150px;
 }
 
+.contents {
+  margin: 10px;
+}
+
 .contents * {
-  flex-direction: column;
+  display: flow-root;
+}
+
+.dine-noter {
+  margin: 10px;
 }

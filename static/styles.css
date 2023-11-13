@@ -4,6 +4,11 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.header * {
+  text-decoration: none;
+  color: black;
+}
+
 .logo{
   display: flex;
   align-items: center;
@@ -27,4 +32,8 @@
 
 .navbar-right * {
   margin-left: 1150px;
+}
+
+.contents * {
+  flex-direction: column;
 }

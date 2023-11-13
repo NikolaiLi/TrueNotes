@@ -6,10 +6,16 @@
 <h2>Her kan du tilføje nye noter</h2>
 
     <body>
-        
-        {% for x in range(10) %}
-            <p>{{x}}</p>
-        {% endfor %}    
+                 <div class = "contents">
+                <form method = "POST" action = '/Note' enctype="multipart/form-data">
+                    <div class = "blog postblog-page">
+                        <input type = "text" class = "blog-name" name = "Emne" placeholder="Emne" required = "True">
+                        <textarea name="Note" rows="3" cols="60" placeholder="Skrive din note her..." required = "True"></textarea>            
+                    </div>
+                    
+                <input class="button" type="submit" value="Opret note">
+            </form>
+        </div>        
         
     </body>
 

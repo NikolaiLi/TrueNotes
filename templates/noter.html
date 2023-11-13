@@ -5,6 +5,14 @@
 
 <h2>Dine noter:</h2>
 
+<ul>
+    {% for note in notes %}
+    <li>
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.text }}</p>
+    </li>
+    {% endfor %}
+  </ul>  
 
 </body>
 

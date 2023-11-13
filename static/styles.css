@@ -17,3 +17,13 @@
 .navbar * {
   margin-left: 20px;
 }
+
+.navbar-right {
+  align-items: center;
+  margin-left: 10px;
+  display: flex;
+}
+
+.navbar-right * {
+  margin-left: 1150px;
+}

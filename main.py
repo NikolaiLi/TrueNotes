@@ -10,7 +10,8 @@ jinja = SanicJinja2(app)
 
 notes = []
 
-globals = {"menu": {"Startside":"/", "Opret": "/opret", "Noter": "/noter", "Log Ind": "/logind"},
+globals = {"menu": {"Startside":"/", "Opret": "/opret", "Noter": "/noter"},
+           "loggingon": {"Log Ind": "/logind"},
            "posts": {},
            "notes": notes
            }

@@ -12,11 +12,14 @@ notes = []
 
 logge_ind = []
 
+sign_up = []
+
 globals = {"menu": {"Oversigt":"/", "Opret": "/opret", "Noter": "/noter"},
            "loggingon": {"Log Ind": "/logind"},
            "logge_ind": logge_ind,
            "posts": {},
-           "notes": notes
+           "notes": notes,
+           "sign_up":{},
            }
 
 @app.get("/", name = "index")
@@ -39,6 +42,11 @@ async def opret(request):
 async def logind(request):
     return globals
 
+@app.get("/signup", name = "signup-page")
+@jinja.template("signup.html")
+async def signup(request):
+    return globals
+
 @app.post("/Note")
 async def Note(request):
     title = request.form.get('Emne')
@@ -57,7 +65,21 @@ async def login(request):
 
     login_entry = {"id": id, "brugernavn": brugernavn, "adgangskode": adgangskode}
     logge_ind.append(login_entry)
-    return redirect("/")
+    
+    if login_entry == sign_up:
+        return redirect ("/")
+    return redirect("/logind")
+
+@app.post("/signup")
+async def signup(request):
+    sign_up_brugernavn = request.form.get('Navn')
+    sign_up_gmail = request.form.get('Gmail')
+    sign_up_adgangskode = request.form.get('Adgangskode')
+    id = str(uuid.uuid4())
+
+    sign_up_entry = {"id": id, "sign_up_brugernavn": sign_up_brugernavn, "sign_up_gmail": sign_up_gmail, "sign_up_adgangskode": sign_up_adgangskode}
+    sign_up.append(sign_up_entry)
+    return redirect("/logind")
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug = True)

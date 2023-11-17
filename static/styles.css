@@ -50,6 +50,15 @@
   display: flow-root;
 }
 
+.signup-box{
+  margin: 10px;
+}
+
+.signup-box * {
+  display: flow-root;
+  margin-bottom: 5px;
+}
+
 .dine-noter {
   margin: 10px;
 }

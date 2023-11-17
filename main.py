@@ -12,7 +12,7 @@ notes = []
 
 logge_ind = []
 
-globals = {"menu": {"Startside":"/", "Opret": "/opret", "Noter": "/noter"},
+globals = {"menu": {"Oversigt":"/", "Opret": "/opret", "Noter": "/noter"},
            "loggingon": {"Log Ind": "/logind"},
            "logge_ind": logge_ind,
            "posts": {},

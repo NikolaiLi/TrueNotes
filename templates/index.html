@@ -3,6 +3,15 @@
 
 {% include 'header.html' %}
 
-    
+<body>
 
+<ul>
+    {% for login_entry in logge_ind %}
+    <li>
+      <h3>Hej {{ login_entry.brugernavn }}</h3>
+    </li>
+    {% endfor %}
+  </ul>  
+
+</body>
 </html>

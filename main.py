@@ -10,12 +10,14 @@ jinja = SanicJinja2(app)
 
 notes = []
 
+logge_ind = []
+
 globals = {"menu": {"Startside":"/", "Opret": "/opret", "Noter": "/noter"},
            "loggingon": {"Log Ind": "/logind"},
+           "logge_ind": logge_ind,
            "posts": {},
            "notes": notes
            }
-
 
 @app.get("/", name = "index")
 @jinja.template("index.html")
@@ -46,6 +48,16 @@ async def Note(request):
     note = {"id": id, "title": title, "text": text}
     notes.append(note)
     return redirect("/noter")
+
+@app.post("/login")
+async def login(request):
+    brugernavn = request.form.get('Navn')
+    adgangskode = request.form.get('Adgangskode')
+    id = str(uuid.uuid4())
+
+    login_entry = {"id": id, "brugernavn": brugernavn, "adgangskode": adgangskode}
+    logge_ind.append(login_entry)
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug = True)

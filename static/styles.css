@@ -38,6 +38,14 @@
   margin: 10px;
 }
 
+.logind-box {
+  margin: 10px;
+}
+
+.logind-box * {
+  display: flow-root;
+}
+
 .contents * {
   display: flow-root;
 }

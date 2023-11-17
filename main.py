@@ -4,7 +4,7 @@ from sanic_jinja2 import SanicJinja2
 from model.post import Post
 import uuid
 
-app = Sanic("Hej")
+app = Sanic("TrueNotes")
 app.static("/static", "./static")
 jinja = SanicJinja2(app)
 

@@ -60,14 +60,15 @@ async def Note(request):
 async def login(request):
     brugernavn = request.form.get('Navn')
     adgangskode = request.form.get('Adgangskode')
-    id = str(uuid.uuid4())
-
-    login_entry = {"id": id, "brugernavn": brugernavn, "adgangskode": adgangskode}
-    logge_ind.append(login_entry)
     
-    if login_entry == sign_up:
-        return redirect ("/")
-    return redirect("/logind")
+    match = next((user for user in sign_up if user ["sign_up_brugernavn"] == brugernavn), None)
+    
+    if match and match["sign_up_adgangskode"] == adgangskode:
+        redirect_obj = redirect("/")
+        redirect_obj.cookies["user_id"] = match["id"]
+        return redirect_obj
+    else:
+        return redirect("/logind")
 
 @app.post("/signup")
 async def signup(request):

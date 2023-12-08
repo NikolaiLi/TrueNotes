@@ -9,13 +9,10 @@ jinja = SanicJinja2(app)
 
 notes = []
 
-logge_ind = []
-
 sign_up = []
 
 globals = {"menu": {"Oversigt":"/", "Opret": "/opret", "Noter": "/noter"},
            "loggingon": {"Log Ind": "/logind"},
-           "logge_ind": logge_ind,
            "posts": {},
            "notes": notes,
            "sign_up":{},
